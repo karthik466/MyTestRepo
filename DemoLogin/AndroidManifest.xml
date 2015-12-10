@@ -19,14 +19,26 @@
         android:theme="@style/AppTheme" 
         android:largeHeap="true">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.example.demologin.Splash"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.demologin.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            </activity>
+             <activity
+            android:name="com.example.demologin.Home"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            </activity>
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
