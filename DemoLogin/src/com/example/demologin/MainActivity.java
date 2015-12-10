@@ -7,9 +7,12 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -264,5 +267,16 @@ public class MainActivity extends Activity implements ConnectionCallbacks, OnCon
 	      Person signedInUser = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
 	      Log.e("", ""+ signedInUser.getBirthday());
 	      Log.e("", ""+ signedInUser.toString());
+	      setLoginSuccess();
+	   }
+	   
+	   
+	   private void setLoginSuccess()
+	   {
+		   SharedPreferences preferences=getSharedPreferences(Splash.MYPREF, Context.MODE_PRIVATE);
+		   Editor editor=preferences.edit();
+		   
+		   editor.putBoolean("isLogin", true);
+		   editor.commit();
 	   }
 }
